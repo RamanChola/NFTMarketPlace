@@ -6,7 +6,6 @@ import axios from "axios";
 import { useState } from "react";
 
 export default function NFTPage (props) {
-
 const [data, updateData] = useState({});
 const [dataFetched, updateDataFetched] = useState(false);
 const [message, updateMessage] = useState("");
@@ -22,7 +21,7 @@ async function getNFTData(tokenId) {
     let contract = new ethers.Contract(MarketplaceJSON.address, MarketplaceJSON.abi, signer)
     //create an NFT Token
     const tokenURI = await contract.tokenURI(tokenId);
-    const listedToken = await contract.getListedTokenForId(tokenId);
+    const listedToken = await contract.getListedForTokenId(tokenId);
     let meta = await axios.get(tokenURI);
     meta = meta.data;
     console.log(listedToken);
