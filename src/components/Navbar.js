@@ -74,7 +74,7 @@ async function connectWebsite() {
           <li className='flex items-end ml-5 pb-2'>
             <Link to="/">
             <div className='inline-block font-bold text-xl ml-2'>
-              NFT Marketplac
+              NFT Marketplace
             </div>
             </Link>
           </li>
