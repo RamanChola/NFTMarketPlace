@@ -48,7 +48,6 @@ async function connectWebsite() {
     await window.ethereum.request({ method: 'eth_requestAccounts' })
       .then(() => {
         updateButton();
-        console.log("here");
         getAddress();
         window.location.replace(location.pathname)
       });
@@ -58,7 +57,6 @@ async function connectWebsite() {
     let val = window.ethereum.isConnected();
     if(val)
     {
-      console.log("here");
       getAddress();
       toggleConnect(val);
       updateButton();
@@ -67,7 +65,7 @@ async function connectWebsite() {
     window.ethereum.on('accountsChanged', function(accounts){
       window.location.replace(location.pathname)
     })
-  });
+  },[location.pathname]);
 
     return (
       <div className="">
@@ -76,7 +74,7 @@ async function connectWebsite() {
           <li className='flex items-end ml-5 pb-2'>
             <Link to="/">
             <div className='inline-block font-bold text-xl ml-2'>
-              NFT Marketplace
+              NFT Marketplac
             </div>
             </Link>
           </li>
